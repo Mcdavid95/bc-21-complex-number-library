@@ -22,9 +22,10 @@ Complex.transform = function(num){
 
 Complex.display_function = function(re, im){
     if(im === '0') return '' + re;
-    if(re === 0) return 'im' + 'i';
+    if(re === 0) return im + 'i';
     if(im < 0) return '' + re + im + 'i';
     if(im === 1) return '' + re + 'i';
+    if(im === -1) return '' + re + '-1'
     return '' + re + '+' + im + 'i';
 
 }
