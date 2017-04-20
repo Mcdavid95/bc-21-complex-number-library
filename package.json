@@ -1,0 +1,23 @@
+{
+  "name": "complex-numbers",
+  "version": "1.0.0",
+  "description": "\"A JavaScript library to solve complex numbers\"'",
+  "main": "complex.js",
+  "scripts": {
+    "test": "\"jasmine-node spec\"'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mcdavid95/complex-numbers.git"
+  },
+  "keywords": [
+    "\"complex",
+    "numbers\""
+  ],
+  "author": "\"Mcdavid Emereuwa\",",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mcdavid95/complex-numbers/issues"
+  },
+  "homepage": "https://github.com/Mcdavid95/complex-numbers#readme"
+}
