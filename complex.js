@@ -1,13 +1,9 @@
-(function(){
-    'use strict'
-    module.exports = Complex;
-
 
  function Complex(real, imaginary){
     this.real = 0;
     this.imaginary = 0;
     this.real = (typeof  real=== 'undefined' ? this.real : parseFloat(real));
-    this.imaginary = (typeof imaginary === 'undefined'? this.real : parseFloat(imaginary));
+    this.imaginary = (typeof imaginary === 0 ? this.imaginary  : parseFloat(imaginary));
 
 }
 
@@ -20,28 +16,32 @@ Complex.transform = function(num){
 };
 
 
-Complex.display_function = function(re, im){
-    if(im === '0') return '' + re;
-    if(re === 0) return im + 'i';
+function display_function(re, im){
+    if(im === 0) return '' + re;
+    if(re === 0 && im === 1) return  '' + 'i';
+    if(im === -1 && re === 0) return '' + '-i';
+    if(re > 0 && im === -1) return '' + re + '-i';
+    if(re < 0 && im === -1) return '' + re + '-i';
+    if(re === 0) return  '' + im + 'i';
     if(im < 0) return '' + re + im + 'i';
-    if(im === 1) return '' + re + 'i';
-    if(im === -1) return '' + re + '-1'
+    if(im === 1) return '' + re + '+' + 'i';
+    if(im === -1) return '' + re + '-i';
     return '' + re + '+' + im + 'i';
 
 }
 
 
-Complex.add = function(first, second){
+function add_complex(first, second){
     var num1, num2;
     num1 = Complex.transform(first);
     num2 = Complex.transform(second);
     var rl = num1.real + num2.real;
-    var img = num1.imaginary + num1.imaginary;
+    var img = num1.imaginary + num2.imaginary;
     return display_function(rl, img);
 }
 
 
-Complex.subtract = function(first, second){
+function subs_complex(first, second){
     var num1, num2;
     num1 = Complex.transform(first);
     num2 = Complex.transform(second);
@@ -51,7 +51,7 @@ Complex.subtract = function(first, second){
 }
 
 
-Complex.multiply = function(first, second){
+function multi_complex(first, second){
     var num1, num2;
     num1 = Complex.transform(first);
     num2 = Complex.transform(second);
@@ -61,7 +61,7 @@ Complex.multiply = function(first, second){
 }
 
 
-Complex.divide = function(first, second){
+function divide_complex(first, second){
     var num1, num2, rl, img, divisor;
     num1 = Complex.transform(first);
     num2 = Complex.transform(second);
@@ -72,7 +72,7 @@ Complex.divide = function(first, second){
 }
 
 
-Complex.conjugate = function(complex){
+function conjugate(complex){
     var num, rl, img;
     num = Complex.transform(complex);
     rl  = num.real;
@@ -80,4 +80,3 @@ Complex.conjugate = function(complex){
     return display_function(rl, img);
 
 }
-})();
