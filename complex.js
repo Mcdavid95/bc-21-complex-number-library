@@ -29,11 +29,21 @@ function display_function(re, im){
     else if(re > 0 && im === -1) {
         return '' + re + ' -i';
     }
-    if(re < 0 && im === -1) return '' + re + ' -i';
-    if(re === 0) return  '' + im + 'i';
-    if(im < 0) return '' + re + im + 'i';
-    if(im === 1) return '' + re + ' +' + ' i';
-    if(im === -1) return '' + re + ' -i';
+    else if(re < 0 && im === -1){
+        return '' + re + ' -i';
+    }
+    else if(re === 0){
+        return  '' + im + 'i';
+    }
+    else if(im < 0){
+        return '' + re + im + 'i';
+    }
+    else if(im === 1){
+        return '' + re + ' +' + ' i';
+    }
+    else if(im === -1){
+        return '' + re + ' -i';
+    }
     return '' + re + ' + ' + im + 'i';
 
 }
@@ -88,6 +98,9 @@ function conjugate(complex){
     return display_function(rl, img);
 
 }
+var a =new Complex(2, 3);
+var b = new Complex(5, 6);
+console.log(add(a, b));
 module.exports= {
     Complex,
     add,
