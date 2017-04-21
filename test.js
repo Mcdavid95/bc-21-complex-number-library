@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 var myApp = require('./complex');
 let jasmine = require('jasmine')
 

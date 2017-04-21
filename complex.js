@@ -2,8 +2,9 @@
  function Complex(real, imaginary){
     this.real = 0;
     this.imaginary = 0;
-    this.real = (typeof  real=== 'undefined' ? this.real : parseFloat(real));
+    this.real = (typeof  real === 'undefined' ? this.real : parseFloat(real));
     this.imaginary = (typeof imaginary === 0 ? this.imaginary  : parseFloat(imaginary));
+
 
 }
 
@@ -44,6 +45,7 @@ function display_function(re, im){
     else if(im === -1){
         return '' + re + ' -i';
     }
+    
     return '' + re + ' + ' + im + 'i';
 
 }
