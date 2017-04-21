@@ -1,4 +1,4 @@
-
+'use strict';
  function Complex(real, imaginary){
     this.real = 0;
     this.imaginary = 0;
@@ -17,10 +17,18 @@ Complex.transform = function(num){
 
 
 function display_function(re, im){
-    if(im === 0) return '' + re;
-    if(re === 0 && im === 1) return  '' + 'i';
-    if(im === -1 && re === 0) return '' + ' -i';
-    if(re > 0 && im === -1) return '' + re + ' -i';
+    if(im === 0) {
+        return '' + re;
+    }
+    else if(re === 0 && im === 1) {
+        return  '' + 'i';
+    }
+    else if(im === -1 && re === 0) {
+        return '' + ' -i';
+    }
+    else if(re > 0 && im === -1) {
+        return '' + re + ' -i';
+    }
     if(re < 0 && im === -1) return '' + re + ' -i';
     if(re === 0) return  '' + im + 'i';
     if(im < 0) return '' + re + im + 'i';
