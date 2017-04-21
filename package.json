@@ -1,5 +1,5 @@
 {
-  "name": "complex-numbers",
+  "name": "complex",
   "version": "1.0.0",
   "description": "\"A JavaScript library to solve complex numbers\"'",
   "main": "complex.js",
