@@ -31,7 +31,7 @@ let getUserChoice = function(){
 /*Assesses User's choice*/
 let assessUserChoice = function(input){
 
-    while(Math.abs(input) >= 0 && Math.abs(input) < 6){
+    if(Math.abs(input) >= 0 && Math.abs(input) < 6){
 
         let mainResult, complexNumArray;
 
@@ -42,28 +42,28 @@ let assessUserChoice = function(input){
                     console.log(chalk.yellow.bold("\n Your choice: 1... Addition of complex numbers"));
                     complexNumArray = getComplex();
                     mainResult = mainApp.add(complexNumArray[0], complexNumArray[1]);
-                    console.log(chalk.yellow.bold("Addition of complex numbers " + complexNumArray[0] + " and " + complexNumArray[1] + " is " + mainResult + "\n"));
+                    console.log(chalk.yellow.bold("Result of Addition = " + mainResult + "\n"));
                     break;
 
             case "2":
                     console.log(chalk.yellow.bold("\n Your choice: 2... Subtraction of complex numbers"));
                     complexNumArray = getComplex();
                     mainResult = mainApp.subtract(complexNumArray[0], complexNumArray[1]);
-                    console.log(chalk.yellow.bold("Complex number " + complexNumArray[0] + " minus complex number " + complexNumArray[1] + " gives " + mainResult + "\n"));
+                    console.log(chalk.yellow.bold("Result of Subtraction = " + mainResult + "\n"));
                     break;
 
             case "3":
                     console.log(chalk.yellow.bold("\n Your choice: 3... Multiplication of complex numbers"));
                     complexNumArray = getComplex();
                     mainResult = mainApp.multiply(complexNumArray[0], complexNumArray[1]);
-                    console.log(chalk.yellow.bold("Complex number " + complexNumArray[0] + " multiply complex number " + complexNumArray[1] + " is " + mainResult + "\n"));
+                    console.log(chalk.yellow.bold("Result of multiplication = " + mainResult + "\n"));
                     break;
 
             case "4":
                     console.log(chalk.yellow.bold("\n Your choice: 4... Division of complex numbers"));
                     complexNumArray = getComplex();
                     mainResult = mainApp.divide(complexNumArray[0], complexNumArray[1]);;
-                    console.log(chalk.yellow.bold("Complex number " + complexNumArray[0] + " divided by complex " + complexNumArray[1] + " is " + mainResult + "\n"));
+                    console.log(chalk.yellow.bold("Result of division =  " + mainResult + "\n"));
                     break; 
 
             case "5":
@@ -79,11 +79,12 @@ let assessUserChoice = function(input){
                     break;
 
                     default:
-                           console.log(chalk.magenta("Your input must be a number between 0 and 5."));
+                           console.log(chalk.magenta.bold("Your input must be a number between 0 and 5."));
                     break;       
 
                  }
-          break;
+         }else if(input > 5){
+             return "Invalid Input";
          }
          return assessUserChoice(getUserChoice());
     };
@@ -92,12 +93,18 @@ let assessUserChoice = function(input){
     let getComplex = function(){
 
         console.log(chalk.cyan("Please input real and imaginary parts of each complex number without the `i`\n"));
+
         let firstReal = readInput.question(chalk.white.bold("Enter the real part of first complex number: \n")),
+        
             firstImaginary = readInput.question(chalk.white.bold("Enter the imaginary part of the first complex number: \n")),
+
             secondReal = readInput.question(chalk.white.bold("Enter real part of second complex number: \n")),
+
             secondImaginary = readInput.question(chalk.white.bold("Enter imaginary part of second complex number: \n")),
+
         firstComplex = (typeof firstReal === 'undefined') ? new mainApp.Complex(0, firstImaginary):
                           (typeof firstImaginary === 'undefined') ? new mainApp.Complex(firstReal, 0): new mainApp.Complex(firstReal, firstImaginary),
+
         secondComplex = (typeof secondReal ===  'undefined') ? new mainApp.Complex(0, secondImaginary):
                           (typeof secondImaginary === 'undefined') ? new mainApp.Complex(secondReal, 0): new mainApp.Complex(secondReal, secondImaginary);
                           return [firstComplex, secondComplex];
@@ -106,10 +113,15 @@ let assessUserChoice = function(input){
       let getSingleComplex = function(){
 
           console.log(chalk.cyan.bold("Please input real and imaginary part for the complex number without the `i`\n"));
-          let real = readInput.question(chalk.white.bold("Enter real part of complex number: \n")),
-              imaginary = readInput.question(chalk.white.bold("Enter imaginary part of complex number: \n"));
-              let singleComplexNum = new mainApp.Complex(real, imaginary);
-              return [singleComplexNum];
+
+          let rl = readInput.question(chalk.white.bold("Enter real part of complex number: \n")),
+
+              im = readInput.question(chalk.white.bold("Enter imaginary part of complex number: \n"));
+
+              let singleComplexNum = new mainApp.Complex(rl, im);
+
+              return singleComplexNum;
+
 
           
       };
