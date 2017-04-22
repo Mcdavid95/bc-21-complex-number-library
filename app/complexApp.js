@@ -112,7 +112,7 @@ let assessUserChoice = function(input){
                           (typeof secondImaginary === 'undefined') ? new mainApp.main_class(secondReal, 0): new mainApp.main_class(secondReal, secondImaginary);
                           return [firstComplex, secondComplex];
     }
-
+      //gets users  input for single Complex number//
       let getSingleComplex = function singleComplex(){
 
           console.log(chalk.cyan.bold("Please input real and imaginary part for the complex number without the `i`\n"));
@@ -128,5 +128,6 @@ let assessUserChoice = function(input){
 
           
       };
+      //Starts App//
       assessUserChoice(getUserChoice()); 
 })();

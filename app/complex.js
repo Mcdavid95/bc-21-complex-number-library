@@ -17,6 +17,7 @@ main_class.prototype.transform = function(num){
 
 
 let display = function display_function(re, im){
+   
     if(im === 0) {
         return '' + re;
     }
@@ -43,9 +44,11 @@ let display = function display_function(re, im){
     }
     else if(im === -1){
         return '' + re + ' -i';
-    }else{
+    }
+    else{
     return '' + re + ' + ' + im + 'i';
     }
+    return "invalid input";
 
 };
 
