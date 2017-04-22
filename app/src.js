@@ -30,8 +30,12 @@ let getUserChoice = function(){
 
 /*Assesses User's choice*/
 let assessUserChoice = function(input){
+    if(input > 5){
+       let msg = console.log(chalk.red.italic("Invalid input: Please try again- Input a number between 0 and 5"));
+       return msg;
+    }
 
-    if(Math.abs(input) >= 0 && Math.abs(input) < 6){
+    else if(Math.abs(input) >= 0 && Math.abs(input) < 6){
 
         let mainResult, complexNumArray;
 
@@ -83,14 +87,13 @@ let assessUserChoice = function(input){
                     break;       
 
                  }
-         }else if(input > 5){
-             return "Invalid Input";
          }
+         
          return assessUserChoice(getUserChoice());
     };
 
     //Get's complex number inputs from user//
-    let getComplex = function(){
+    let getComplex = function twoComplex(){
 
         console.log(chalk.cyan("Please input real and imaginary parts of each complex number without the `i`\n"));
 
@@ -102,15 +105,15 @@ let assessUserChoice = function(input){
 
             secondImaginary = readInput.question(chalk.white.bold("Enter imaginary part of second complex number: \n")),
 
-        firstComplex = (typeof firstReal === 'undefined') ? new mainApp.Complex(0, firstImaginary):
-                          (typeof firstImaginary === 'undefined') ? new mainApp.Complex(firstReal, 0): new mainApp.Complex(firstReal, firstImaginary),
+        firstComplex = (typeof firstReal === 'undefined') ? new mainApp.main_class(0, firstImaginary):
+                          (typeof firstImaginary === 'undefined') ? new mainApp.main_class(firstReal, 0): new mainApp.main_class(firstReal, firstImaginary),
 
-        secondComplex = (typeof secondReal ===  'undefined') ? new mainApp.Complex(0, secondImaginary):
-                          (typeof secondImaginary === 'undefined') ? new mainApp.Complex(secondReal, 0): new mainApp.Complex(secondReal, secondImaginary);
+        secondComplex = (typeof secondReal ===  'undefined') ? new mainApp.main_class(0, secondImaginary):
+                          (typeof secondImaginary === 'undefined') ? new mainApp.main_class(secondReal, 0): new mainApp.main_class(secondReal, secondImaginary);
                           return [firstComplex, secondComplex];
     }
 
-      let getSingleComplex = function(){
+      let getSingleComplex = function singleComplex(){
 
           console.log(chalk.cyan.bold("Please input real and imaginary part for the complex number without the `i`\n"));
 
@@ -118,7 +121,7 @@ let assessUserChoice = function(input){
 
               im = readInput.question(chalk.white.bold("Enter imaginary part of complex number: \n"));
 
-              let singleComplexNum = new mainApp.Complex(rl, im);
+              let singleComplexNum = new mainApp.main_class(rl, im);
 
               return singleComplexNum;
 
