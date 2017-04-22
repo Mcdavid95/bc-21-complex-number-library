@@ -1,6 +1,6 @@
 # Complex
 
-Introduction
+# Introduction
 
 •	Complex is a JavaScript library that performs simple complex number operations which includes the following:
        Addition of two complex numbers.
@@ -8,7 +8,7 @@ Introduction
        Multiply two Complex numbers.
        Divide a Complex number by another.
 
-#Dependencies:
+# Dependencies:
 
 •	This app uses the following dependencies:
 
@@ -22,13 +22,16 @@ Introduction
 
 •	Readline-Sync – To read users terminal input.
 
-#Pre-requirements:
+# Pre-requirements:
 
 •	Nodejs needs  to be installed for app to work
 
-#Usage:
+# Usage:
+
 •	Navigate to app directory on terminal
+
 •	Run the following command: node complexApp
+
 •	Follow the prompt.
 
 
