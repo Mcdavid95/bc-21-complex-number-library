@@ -30,7 +30,7 @@
 
 •	Navigate to app directory on terminal
 
-•	Run the following command: node complexApp
+•	Run the following command: (node complexApp)
 
 •	Follow the prompt.
 
